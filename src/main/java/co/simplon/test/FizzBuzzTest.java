@@ -11,8 +11,18 @@ public class FizzBuzzTest {
 		assertEquals("0", FizzBuzz.fizzBuzz(0, 0));
 	}
 
-	@Test
+/*	@Test
 	public void shouldReturnListNumbers() {
 		assertEquals("1234567", FizzBuzz.fizzBuzz(1, 7));
+	}*/
+	
+	/*@Test
+	public void shouldTransform3Multiple() {
+		assertEquals("12Fizz45Fizz7", FizzBuzz.fizzBuzz(1, 7));
+	}*/
+	
+	@Test
+	public void shouldTransform3And5Multiple() {
+		assertEquals("12Fizz4BuzzFizz7", FizzBuzz.fizzBuzz(1, 7));
 	}
 }
