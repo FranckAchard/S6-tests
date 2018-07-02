@@ -10,13 +10,15 @@ public class FizzBuzz {
 			res = "0";
 		} else {
 			for (int i=min ; i <= max ; i++) {
-//				Integer integ = new Integer(i);
-//				res += integ.toString();
-				if (isNMultiple(i, 3)) {
-					res += "Fizz";
+				// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
+				if (isNDivisible(i, 15)) {
+					res += "FizzBuzz";
 				}
-				else if(isNMultiple(i, 5)) {
+				else if (isNDivisible(i, 5)) {
 					res += "Buzz";
+				}
+				else if(isNDivisible(i, 3)) {
+					res += "Fizz";
 				}
 				else {
 					res += i;
@@ -26,6 +28,7 @@ public class FizzBuzz {
 		return res;
 	}
 	
+	// liste les diviseurs d'un entier
 	private static List<Integer> listDivisors(int integ) {
 		List<Integer> res = new ArrayList<Integer>();
 		if (integ == 0) {
@@ -40,47 +43,14 @@ public class FizzBuzz {
 		}
 		return res;
 	}
-
-/*	private static boolean is3Multiple(int integ) {
+	
+	// indique si integ est un multiple de 'multiple'
+	private static boolean isNDivisible(int integ, int divisor) {
 		boolean res = false;
-		if (listDivisors(integ).contains(3)) {
+		if (listDivisors(integ).contains(divisor)) {
 			res = true;
 		}
 		return res;
 	}
-	
-	private static boolean is5Multiple(int integ) {
-		boolean res = false;
-		if (listDivisors(integ).contains(5)) {
-			res = true;
-		}
-		return res;
-	}*/
-	
-	private static boolean isNMultiple(int integ, int multiple) {
-		boolean res = false;
-		if (listDivisors(integ).contains(multiple)) {
-			res = true;
-		}
-		return res;
-	}
-
-	
-/*	private static int[] listDivisors(int integ) {
-		int[] res = {};
-		if (integ == 0) {
-			res[0] = 0;
-		} else {
-			int j = 0;
-			for (int i = 1 ; i <= integ ; i++) {
-				// si le reste de la division de integ par i est nul, alors i est un diviseur de integ
-				if (integ % i == 0) {
-					res[j] = i;
-					j++;
-				}
-			}			
-		}
-		return res;
-	}*/
 	
 }

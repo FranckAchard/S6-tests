@@ -21,8 +21,13 @@ public class FizzBuzzTest {
 		assertEquals("12Fizz45Fizz7", FizzBuzz.fizzBuzz(1, 7));
 	}*/
 	
-	@Test
+	/*@Test
 	public void shouldTransform3And5Multiple() {
 		assertEquals("12Fizz4BuzzFizz7", FizzBuzz.fizzBuzz(1, 7));
+	}*/
+	
+	@Test
+	public void shouldTotallyWorks() {
+		assertEquals("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz1617Fizz19Buzz", FizzBuzz.fizzBuzz(1, 20));
 	}
 }
