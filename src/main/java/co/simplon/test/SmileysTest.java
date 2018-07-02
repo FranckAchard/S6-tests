@@ -23,8 +23,15 @@ public class SmileysTest {
 	@Test
 	public void shouldReturn1IfOneSmiley() {
 		List<String> arr = new ArrayList<String>();
-		arr.add("r");
+		arr.add(":)");
 		assertEquals(1, Smileys.countSmileys(arr));
+	}
+	
+	@Test
+	public void shouldReturn0IfNotSmiley() {
+		List<String> arr = new ArrayList<String>();
+		arr.add(":[");
+		assertEquals(0, Smileys.countSmileys(arr));
 	}
 	
 
