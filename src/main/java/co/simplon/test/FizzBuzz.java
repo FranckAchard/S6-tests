@@ -6,11 +6,11 @@ import java.util.List;
 public class FizzBuzz {
 	public static String fizzBuzz(int min, int max) {
 		String res = "";
-		if (min == 0 && max == 0) {
+		if ((min == 0 && max == 0) || (min > max)) {
 			res = "0";
 		} else {
 			for (int i=min ; i <= max ; i++) {
-				// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
+/*				// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
 				if (isNDivisible(i, 15)) {
 					res += "FizzBuzz";
 				}
@@ -22,7 +22,8 @@ public class FizzBuzz {
 				}
 				else {
 					res += i;
-				}
+				}*/
+				res += setFizzBuzz(i);
 			}
 		}
 		return res;
@@ -44,11 +45,30 @@ public class FizzBuzz {
 		return res;
 	}
 	
-	// indique si integ est un multiple de 'multiple'
+	// indique si integ est divisible par divisor
 	private static boolean isNDivisible(int integ, int divisor) {
 		boolean res = false;
 		if (listDivisors(integ).contains(divisor)) {
 			res = true;
+		}
+		return res;
+	}
+	
+	// FizzBuzz un entier 
+	private static String setFizzBuzz(int integ) {
+		String res="";
+		// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
+		if (isNDivisible(integ, 15)) {
+			res = "FizzBuzz";
+		}
+		else if (isNDivisible(integ, 5)) {
+			res = "Buzz";
+		}
+		else if(isNDivisible(integ, 3)) {
+			res = "Fizz";
+		}
+		else {
+			res = "" + integ;
 		}
 		return res;
 	}

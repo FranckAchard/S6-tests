@@ -10,6 +10,27 @@ public class FizzBuzzTest {
 	public void shouldReturn0If00() {
 		assertEquals("0", FizzBuzz.fizzBuzz(0, 0));
 	}
+	
+	@Test
+	public void shouldReturn1If11() {
+		assertEquals("1", FizzBuzz.fizzBuzz(1, 1));
+	}
+	
+	@Test
+	public void shouldReturnFizzIf33() {
+		assertEquals("Fizz", FizzBuzz.fizzBuzz(3, 3));
+	}
+
+	@Test
+	public void shouldReturnBuzzIf55() {
+		assertEquals("Buzz", FizzBuzz.fizzBuzz(5, 5));
+	}
+	
+	@Test
+	public void shouldReturnFizzBuzzIf1515() {
+		assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(15, 15));
+	}
+
 
 /*	@Test
 	public void shouldReturnListNumbers() {
@@ -30,4 +51,5 @@ public class FizzBuzzTest {
 	public void shouldTotallyWorks() {
 		assertEquals("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz1617Fizz19Buzz", FizzBuzz.fizzBuzz(1, 20));
 	}
+
 }
