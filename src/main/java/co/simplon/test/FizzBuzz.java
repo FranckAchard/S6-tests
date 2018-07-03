@@ -1,7 +1,7 @@
 package co.simplon.test;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public class FizzBuzz {
 	public static String fizzBuzz(int min, int max) {
@@ -10,25 +10,13 @@ public class FizzBuzz {
 			res = "0";
 		} else {
 			for (int i=min ; i <= max ; i++) {
-/*				// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
-				if (isNDivisible(i, 15)) {
-					res += "FizzBuzz";
-				}
-				else if (isNDivisible(i, 5)) {
-					res += "Buzz";
-				}
-				else if(isNDivisible(i, 3)) {
-					res += "Fizz";
-				}
-				else {
-					res += i;
-				}*/
 				res += setFizzBuzz(i);
 			}
 		}
 		return res;
 	}
 	
+/*
 	// liste les diviseurs d'un entier
 	private static List<Integer> listDivisors(int integ) {
 		List<Integer> res = new ArrayList<Integer>();
@@ -53,18 +41,30 @@ public class FizzBuzz {
 		}
 		return res;
 	}
-	
+*/	
 	// FizzBuzz un entier 
 	private static String setFizzBuzz(int integ) {
 		String res="";
 		// on teste en 1er multiple de 15 car 15 est aussi divisible par 3 et 5
-		if (isNDivisible(integ, 15)) {
+/*		if (isNDivisible(integ, 15)) {
 			res = "FizzBuzz";
 		}
 		else if (isNDivisible(integ, 5)) {
 			res = "Buzz";
 		}
 		else if(isNDivisible(integ, 3)) {
+			res = "Fizz";
+		}
+		else {
+			res = "" + integ;
+		}*/
+		if (integ % 15 == 0) {
+			res = "FizzBuzz";
+		}
+		else if (integ % 5 == 0) {
+			res = "Buzz";
+		}
+		else if(integ % 3 == 0) {
 			res = "Fizz";
 		}
 		else {
